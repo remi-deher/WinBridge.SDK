@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>WinBridge.SDK</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>WinBridge</Authors>
+    <Description>Kit de dÃ©veloppement pour crÃ©er des modules WinBridge.</Description>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <NoWarn>$(NoWarn);NETSDK1206</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Grpc.Net.Client" Version="2.67.0" />
+    <PackageReference Include="Google.Protobuf" Version="3.29.1" />
+    <PackageReference Include="Grpc.Tools" Version="2.68.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="Exists('..\WinBridge.Core\WinBridge.Core.csproj')">
+      <ItemGroup>
+        <ProjectReference Include="..\WinBridge.Core\WinBridge.Core.csproj" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <PackageReference Include="WinBridge.Core" Version="1.0.0" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <PropertyGroup>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+</Project>

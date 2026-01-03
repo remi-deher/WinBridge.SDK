@@ -1,0 +1,23 @@
+﻿# --- Build Output ---
+bin/
+obj/
+/TestResults
+
+# --- User Specific & IDE ---
+*.user
+*.suo
+.vs/
+*.userosscache
+*.sln.docstates
+
+# --- System Files ---
+Thumbs.db
+.DS_Store
+ehthumbs.db
+Desktop.ini
+
+# --- Logs & Temporary ---
+*.log
+*.tmp
+*.bak
+*.swp
